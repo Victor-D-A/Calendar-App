@@ -30,8 +30,6 @@ let months = [
 // grab current date automatically and display it for practice in an mm/dd/yyy format and set to side of 'myDiv'
 var currentDate = new Date(); // this sets date as following: Sun Apr 13 2025 15:13:19 GMT-0500 (GMT-05:00)
 
-// document.write(currentDate); // THIS IS LIKE CONSOLE.LOG(), IT DISPLAYS IT TO THE SCREEN
-
 // Make a function declaration to change the current displayed date to the selected month and year that the user chooses from the dropdown menu with it always setting to day 1
 function formatDate() { // 'date' is just a placeholder containing nothing until you pass it something when you call the function(currently took out of parameter)
     var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); // what is the meaning of + 1 for the month
@@ -91,7 +89,6 @@ function displayCalendar() {
         dayLabel.textContent = day;
         calendar.appendChild(dayLabel);
     });
-    // need to create some kind of padding to separate the user's notes from this number so it can go below it instead of next to it
 
     // creates days of the week from the 1st of the month to the 30th/31st of the month(28th/29th)
     for (var i = 0; i < startingDay; i++) {
@@ -113,10 +110,6 @@ function displayCalendar() {
         else {
             dayContainer.classList.add('weekday'); // created to adjust color and other things for weekdays specifically
         }
-
-        // dayContainer.textContent = day;
-        // calendar.appendChild(dayContainer);
-        // BELOW WITH 'info', IT DOES THE SAME THING BUT WE ARE ABLE TO STORE THE DAY
         
         // create an element to hold the numbered day and any texts to store it.
         const info = document.createElement('span');
@@ -186,8 +179,6 @@ function displayCalendar() {
                 button.remove();
                 document.removeEventListener('click', outsideClickHandler);
             }
-            // set the text box to adjust the font size to something smaller or bigger depending on the amount of characters within it. 
-            // Adjust the text box to not go below the vertical bottom of the box
 
             setTimeout(() => {
                 document.addEventListener('click', outsideClickHandler);
@@ -209,14 +200,3 @@ function displayCalendar() {
         }
     }
 }
-
-// building arrays to render once will be better for bigger projects like google calendar clones, etc
-
-//PREPARE TO TALK ABOUT HOW YOU COULD IMPROVE IT LATER (E.G., "IF THIS CALENDAR NEEDED TO SUPPORT VERY 
-// LARGE DATASETS OR THOUSANDS OF EVENTS, I WOULD REFACTOR THIS TO BUILD AN ARRAY FIRST, AND RENDER IT ALL AT ONCE FOR BETTER PERFORMANCE.").
-
-// EXAMPLE OF HOW TO USE DEBUGGER
-// function myFunc() {
-//     debugger; // pauses execution here and opens DevTools Sources tab
-//     // check values in live runtime!
-// }
