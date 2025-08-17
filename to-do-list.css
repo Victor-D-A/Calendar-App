@@ -1,0 +1,109 @@
+body {
+    background-image: url('https://cdn.shopify.com/s/files/1/0242/4607/files/Buche_900x600_1418edde-e3a5-4f58-9a17-de8ee1b9e93c.jpg?v=1692800709');
+}
+
+.right-align { /* what does this help perform? */
+    margin-left: auto;
+}
+
+.myDiv {
+    display: flex; /* Important!!!! Needed for right-align to work */
+    margin: auto;
+    /* background-color: white; */
+    border: 10px outset black;
+    color: darkred;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    height: max-content; 
+    padding-left: 5px; /*used for the words inside*/
+    margin-bottom: 10px; /* helps create a small space between this div and the actual calendar div */
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-left: 10px; /*used for spacing between each label*/
+    padding-right: 5px;
+}
+
+header h2 {
+    margin-top: 0; /*used for header(Name of my calendar) to hug the top of the page*/
+    background-color: lightblue;
+    color: teal;
+    font-size: 2.5rem; /* 40px (every .5rem is 8px) */
+    text-align: center;
+}
+
+#calendar {
+    /* padding-top: 10px; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 represents the amount of columns and 1fr means 1/7th of the available width for each column to take up */
+    gap: 10px;
+    max-width: 60%;
+    max-height: 80%;
+    margin: auto;
+    background-color: white;
+}
+
+/* For the whole day box, not the number only */
+.calendar-day {
+    border: 1px solid;
+    color: teal;
+    text-align: center;
+    height: 125px;
+    overflow: auto; /* this is to add a scroll bar vertical/horizontal whenever needed */
+    scrollbar-width: none; /* hides the scroll bar while still being able to scroll */
+    top: 0; /* seems to do nothing when changed */
+}
+
+.calendar-day.label { /* targets only the weekday names */
+    margin-top: 5px; /* creates some white space between the days with orange border and the top of the calendar to look better */
+    border: 1px solid;
+    color: orange;
+    text-align: center;
+    height: 20px;
+}
+
+.calendar-day.weekday:hover {
+    border: 3px solid;
+    color: blue;
+}
+
+.calendar-day.weekend:hover {
+    border: 3px solid;
+    color: saddlebrown;
+}
+
+.weekend {
+    background-color: pink;
+    color: green; /* font color */
+    text-align: center;
+}
+
+.empty {
+    background-color: rgb(229, 228, 226);
+}
+
+/* .day-info {  This is from a previous attempt but the class is no longer within the js file(keep in case an error later pops up without it)
+    width: 70%;
+    padding: 5px;
+    font-size: 20px;
+} */
+
+.user-Notes { /* causes the numbered dates in the calendar to move when editing such as margin-top: 50px; */
+    color: black;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    text-overflow: ellipsis;
+    overflow: hidden; /* necessary??? */
+    white-space: pre-wrap; /* Allows wrapping for long lines and preserves line breaks*/
+    word-wrap: break-word; /* long words are boken up to prevent overflowing */
+    overflow-y: auto; /* This should add a scroll bar but possibly needs a fixed height */
+    overflow-x: hidden;
+}
+
+/* Need a section to add a scroll bar */
+
+/* make an onClick for editing: change the font, background color,  */

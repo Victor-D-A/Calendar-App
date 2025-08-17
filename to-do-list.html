@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--create a monthly to do list website styled with divs for the days, weeks, categories, etc. -->
+        <link rel = "stylesheet" href = "to-do-list.css">
+    </head>
+        <body>
+            <!--create a login page last-->
+            <header>
+                <h2>Personal Calendar</h2>
+            </header>
+            <!--create a dynamic month to month calendar for the year-->
+            <div class = "myDiv">
+                <label for = "months">Month:</label>
+                <select id = "months" name = "list">
+                    <option value = 0>January</option>
+                    <option value = 1>February</option>
+                    <option value = 2>March</option>
+                    <option value = 3>April</option>
+                    <option value = 4>May</option>
+                    <option value = 5>June</option>
+                    <option value = 6>July</option>
+                    <option value = 7>August</option>
+                    <option value = 8>September</option>
+                    <option value = 9>October</option>
+                    <option value = 10>November</option>
+                    <option value = 11>December</option>
+                </select>
+
+                <label for = "year">Year:</label>
+                <select id = "year"></select>
+                <!-- figure out how to call function from to-do-list.js file to this section for the year -->
+                <!-- Date should be selected once the month loads in -->
+
+                <label class = "right-align" id = "today"></label>
+            </div>
+
+            <!--table to display calendar within-->
+            <div id = 'calendar' class = 'calendar'></div>
+            <script src = "to-do-list.js"></script>
+            <!--function calls within html are not preferred anymore-->
+        </body>
+</html>
