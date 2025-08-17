@@ -2,12 +2,12 @@ body {
     background-image: url('https://cdn.shopify.com/s/files/1/0242/4607/files/Buche_900x600_1418edde-e3a5-4f58-9a17-de8ee1b9e93c.jpg?v=1692800709');
 }
 
-.right-align { /* what does this help perform? */
+.right-align {
     margin-left: auto;
 }
 
 .myDiv {
-    display: flex; /* Important!!!! Needed for right-align to work */
+    display: flex; /* Important! Needed for right-align to work */
     margin: auto;
     /* background-color: white; */
     border: 10px outset black;
@@ -54,7 +54,7 @@ header h2 {
     height: 125px;
     overflow: auto; /* this is to add a scroll bar vertical/horizontal whenever needed */
     scrollbar-width: none; /* hides the scroll bar while still being able to scroll */
-    top: 0; /* seems to do nothing when changed */
+    top: 0;
 }
 
 .calendar-day.label { /* targets only the weekday names */
@@ -85,25 +85,15 @@ header h2 {
     background-color: rgb(229, 228, 226);
 }
 
-/* .day-info {  This is from a previous attempt but the class is no longer within the js file(keep in case an error later pops up without it)
-    width: 70%;
-    padding: 5px;
-    font-size: 20px;
-} */
-
 .user-Notes { /* causes the numbered dates in the calendar to move when editing such as margin-top: 50px; */
     color: black;
     display: inline-block;
     height: fit-content;
     width: fit-content;
     text-overflow: ellipsis;
-    overflow: hidden; /* necessary??? */
+    overflow: hidden;
     white-space: pre-wrap; /* Allows wrapping for long lines and preserves line breaks*/
     word-wrap: break-word; /* long words are boken up to prevent overflowing */
     overflow-y: auto; /* This should add a scroll bar but possibly needs a fixed height */
     overflow-x: hidden;
 }
-
-/* Need a section to add a scroll bar */
-
-/* make an onClick for editing: change the font, background color,  */
